@@ -4,6 +4,7 @@ const val ASC = "asc"
 const val DESC = "desc"
 
 fun main(){
+    //Ask for type
     var type: String
     do {
         println("Enter the type of string: TipoA  or TipoB")
@@ -11,11 +12,13 @@ fun main(){
         if (!type.equals(TYPE_A, true) && !type.equals(TYPE_B, true)) println("Invalid input")
     } while (!type.equals(TYPE_A, true) && !type.equals(TYPE_B, true))
 
+    //Generate random string 
     val randomString = getRandomString(type.lowercase())
     println("The string generated was: $randomString")
-    // Convert string to integer list
+    // Convert  random string to integer list
     val numberList = randomString.toList().map { it.toString().toInt() }
 
+    //Ask for order
     var order: String
     do {
         println("Enter the order to sort the string: asc  or desc")
